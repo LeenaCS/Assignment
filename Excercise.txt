@@ -1,0 +1,72 @@
+1.
+function getRGB(hexColor) 
+{
+
+var res = "rgb(";
+
+res += parseInt("0x"+hexColor[1]+hexColor[2]) + ", ";
+
+res += parseInt("0x"+hexColor[3]+hexColor[4]) + ", ";
+
+res += parseInt("0x"+hexColor[5]+hexColor[6]) + ")";
+
+return res;
+}
+
+
+>var a;
+>a("#0000FF");
+
+>"rgb(0, 0, 255)"
+
+
+2.
+> parseInt(1e1); 
+10
+
+> parseInt('1e1');
+1
+
+> parseFloat('1e1');
+10
+
+> isFinite(0/10);
+true
+
+> isFinite(20/0);
+false
+
+> isNaN(parseInt(NaN));
+true
+
+3.What does the following code alert()?
+var a = 1;
+function f() {
+  function n() {
+    alert(a);
+  }
+  var a = 2;
+  n();
+}
+f();
+
+It prints 2
+
+4.
+var f = alert;
+eval('f("Boo!")');
+--f is assigned the function alert 
+eval executes the script in string by passing parameter.
+
+
+var e;
+var f = alert;
+eval('e=f')('Boo!');
+--f is assigned the function alert
+eval further assigns alert to e and executes the script in string by passing parameter.
+
+
+(function(){
+  return alert;}
+)()('Boo!');
+--self invoking anonymous function.
